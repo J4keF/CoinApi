@@ -1,5 +1,4 @@
 # AUTHOR: JAKE FOGEL
-# STUDENT ID: 261085935
 
 import requests
 
@@ -65,7 +64,7 @@ class Account():
         
     def __str__(self):
         """() -> str
-        Returns string to be outputted whem Account object is printed
+        Returns string to be outputted when Account object is printed
         
         >>> my_acct = Account("jacob.fogel@mail.mcgill.ca", "valid_token")
         >>> print(my_acct)
@@ -99,7 +98,7 @@ class Account():
             raise AssertionError('Please enter endpoint and request dictionary inputs of the valid types! (str, dict)')
         
         if endpoint not in ['balance', 'transfer']:
-            raise AssertionError('Please enter an enpoint that is "balance" or "transfer"')
+            raise AssertionError('Please enter an endpoint that is "balance" or "transfer"')
         
         req_dict['token'] = self.token
 
@@ -114,7 +113,7 @@ class Account():
         
     def retrieve_balance(self):
         """() -> int
-        Accessess the comp202coin API to return the balance of a specific user
+        Accesses the comp202coin API to return the balance of a specific user
         Account object
         
         >>> my_acct = Account("example@mcgill.ca", "ABC")
@@ -155,7 +154,7 @@ class Account():
         >>> my_acct.retrieve_balance()
         200
         >>> my_acct.transfer(200, "example@mail.mcgill.ca")
-        AssertionError: Please ensure your email is not your own, and is in valid mcgill.ca form
+        AssertionError: Please ensure your email is not your own, and is in a valid mcgill.ca form
         """
         if type(coins) != int or type(email) != str:
             raise AssertionError('Please enter coin amount and emial of the valid types! (int, str)')
